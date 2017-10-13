@@ -1,0 +1,33 @@
+
+def creat_fighter():
+	pl={"сила":100,"выносливость":1000}
+	pl["имя"]=input("введите имя, борец: ")
+	choose=input("1-прирост к силе, 2-прирост к выносливости: ")
+	if choose == "1":
+		pl["сила"] += 40
+	else:
+		pl["выносливость"] += 400
+	return pl
+def attack(att, defen):
+	print("игрок",att["имя"], "нанес",att["сила"],"урона")
+	defen["выносливость"]-=att["сила"]
+
+def inf_pl(pl):
+	print("у игрока",pl["имя"],"оставлось",pl["выносливость"],"выносливости")
+
+pl1=creat_fighter()
+pl2=creat_fighter()
+print("-" * 40)
+
+while True:
+	attack(pl1,pl2)
+	attack(pl2,pl1)
+	inf_pl(pl1)
+	inf_pl(pl2)
+	input()
+	if pl1["выносливость"]<=0:
+		print(pl1["имя"],"проиграл")
+		break
+	if pl2["выносливость"]<=0:
+		print(pl2["имя"],"проиграл")
+		break
