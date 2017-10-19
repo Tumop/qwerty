@@ -1,0 +1,10 @@
+@echo off
+color f0
+echo loading
+chcp 1251
+set papka=0
+
+:1
+set /A papka=papka+1
+md VIRUS!!Virus_%papka%
+if not %papka%==10 goto 1
