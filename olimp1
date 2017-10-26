@@ -1,0 +1,14 @@
+while True:
+	A = int(input())
+	B = int(input())
+	C = int(input())
+	if A>=C :
+		break
+	elif int(A) != A and int(B) != B and int(C) != C:
+		break
+	elif A>(2*10**9) and (B>2*10**9) and (C>2*10**9):
+		break
+	else:
+		N = int((C-A)/B)
+		print(N)
+		break
